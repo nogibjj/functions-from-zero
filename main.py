@@ -39,10 +39,12 @@ async def travel(city1: City, city2: City):
     """Estimate travel time between two cities by car with POST HTTP Method
 
     Returns back the travel time between two cities by car.
-    FIXME: Bug
     """
-
-    hours = travel_time(city1, city2)
+    print(f"city1: {city1}")
+    print(f"city2: {city2}")
+    # import ipdb; ipdb.set_trace() #found bug using this!
+    hours = travel_time(city1.name, city2.name)
+    print(f"hours: {hours}")
     return {"travel_time": f"{hours} hours"}
 
 
