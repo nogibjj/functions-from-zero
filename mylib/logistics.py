@@ -43,12 +43,36 @@ def distance_between_two_points(point1, point2):
     return distance.distance(point1, point2).miles
 
 
-# calculate the total distance between a list of cities
-def total_distance(cities):
+# return the coordinates of a city
+def get_coordinates(city):
     """
-    Calculate the total distance between a list of cities
+    Return the coordinates of a city
     """
-    total = 0
-    for i in range(len(cities) - 1):
-        total += distance_between_two_points(cities[i], cities[i + 1])
-    return total
+    for city_name, coordinates in CITIES:
+        if city_name == city:
+            return coordinates
+
+
+def cities_list():
+    """
+    Return the list of cities
+    """
+
+    return [city[0] for city in CITIES]
+
+
+# estimate the travel time between two cities by car.
+# assume the speed is 60 miles per hour
+def travel_time(city1, city2, speed=60):
+    """
+    Estimate the travel time between two cities by car.
+    Assume the default speed is 60 miles per hour
+    """
+    return (
+        distance_between_two_points(get_coordinates(city1), get_coordinates(city2))
+        / speed
+    )
+
+
+# print(distance_between_two_points(CITIES[0][1], CITIES[1][1]))
+# print_cities()
