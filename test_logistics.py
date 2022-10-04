@@ -62,13 +62,9 @@ def test_distance(client):
 
 # build a test the travel time between two cities by car
 def test_travel_time(client):
-    response = client.post("/travel", json={
-  "city1": {
-    "name": "New York"
-  },
-  "city2": {
-    "name": "Los Angeles"
-  }
-})
+    response = client.post(
+        "/travel",
+        json={"city1": {"name": "New York"}, "city2": {"name": "Los Angeles"}},
+    )
     assert response.status_code == 200
     assert response.json() == {"travel_time": "41 hours"}
