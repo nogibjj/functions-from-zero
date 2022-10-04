@@ -3,7 +3,7 @@
 [![CI](https://github.com/nogibjj/functions-from-zero/actions/workflows/main.yml/badge.svg)](https://github.com/nogibjj/functions-from-zero/actions/workflows/main.yml)
 
 # functions-from-zero
-A repo to learn functions
+A repo to learn functions.
 
 ## Step 1:  Configure Development environment
 
